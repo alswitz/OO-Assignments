@@ -14,7 +14,7 @@ public class Factory implements IFactory
   @Override
   public IGameObject createEnemy(int x, int y, int w, int h, int dX, int dY)
   {
-    return new Ball(x, y, w, h, dX, dY);
+    return new Zergling(x, y, w, h, dX, dY);
   }
 
   @Override

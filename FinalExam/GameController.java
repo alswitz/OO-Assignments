@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.HashSet;
 import java.util.Set;
 
-public class GameController implements ActionListener, IGameController, KeyListener
+public class GameController implements ActionListener, IGameController, KeyListener, MouseListener
 {
   private Timer m_timer;
   private List<IGameObject> m_objects;
@@ -38,25 +38,24 @@ public class GameController implements ActionListener, IGameController, KeyListe
       obj.tick();
     }
   }
-  
-  @Override
-  public void keyPressed(KeyEvent e)
-  {
-    for (IGameObject obj : m_objects)
-    {
-      obj.keyPressed(e.getKeyChar());
-    }
-  }
 
   @Override
-  public void keyTyped(KeyEvent e)
-  {
+	public void keyPressed(KeyEvent e)
+	{
+		for (IGameObject obj : m_objects)
+  		{
+			obj.keyPressed(e.getKeyChar());
+  		}
+  	}
 
-  }
+	@Override
+	public void keyTyped(KeyEvent e){}
+	@Override
+	public void keyReleased(KeyEvent e){}
 
-  @Override
-  public void keyReleased(KeyEvent e)
-  {
-
-  }
+	public void mousePressed(MouseEvent e){}
+	public void mouseReleased(MouseEvent e){}
+	public void mouseClicked(MouseEvent e){}
+	public void mouseEntered(MouseEvent e){}
+	public void mouseExited(MouseEvent e){}
 }

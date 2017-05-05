@@ -15,8 +15,8 @@ public class MainFrame extends JFrame
 
   public MainFrame()
   {
-    super("Game Engine Example");
-    setSize(400, 300);
+    super("OO-Final Assignment Alex");
+    setSize(800, 500);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     int interval = 100;

@@ -10,7 +10,7 @@ class StatusView extends JPanel implements IGameView
   {
     m_objects = objects;
     setLayout(new BorderLayout());
-    m_status.setText("");
+    m_status.setText("TESTINGTESTINGTESTING");
     add(m_status, BorderLayout.CENTER);
   }
 

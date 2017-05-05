@@ -13,4 +13,5 @@ public interface IGameObject
   public int getDX();
   public int getDY();
   public void keyPressed(char c);
+  public void specialMove();
 }
