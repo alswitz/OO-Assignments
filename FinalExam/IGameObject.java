@@ -1,5 +1,6 @@
 import java.awt.image.BufferedImage;
-import java.awt.Rectangle;
+import java.awt.event.*;
+import java.awt.*;
 
 public interface IGameObject
 {
@@ -12,6 +13,8 @@ public interface IGameObject
   public int getH();
   public int getDX();
   public int getDY();
+  public String getUnitName();
   public void keyPressed(char c);
+  public void mousePressed(MouseEvent e);
   public void specialMove();
 }

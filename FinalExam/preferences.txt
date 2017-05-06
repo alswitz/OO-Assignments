@@ -1,0 +1,11 @@
+@Preferences.txt
+@Hero Selection: 1 == Marine, 2 == Ghost, 3 == ???
+heroChoice:1
+@
+@Enemy Selection: 1 == Zergling, 2 == Hydralisk, 3 == Overlord, 4 == Mutalisk
+enemyTypeOne:3
+enemyTypeTwo:1
+@
+@ViewType: 1 == Normal Info and Timer, 2 == Stat Tracker
+viewType:2
+@

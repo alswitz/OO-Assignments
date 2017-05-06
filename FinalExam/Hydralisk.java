@@ -1,15 +1,20 @@
+import java.util.Random;
 public class Hydralisk extends GameObject
 {
-  public Hydralisk(int x, int y, int w, int h, int dX, int dY)
-  {
-    super("./hydrlisk.gif", x, y, w, h, dX, dY);
-  }
-
+  private Random random = new Random();
+  private int m_tick = 0;
+  public Hydralisk(String unitName, int x, int y, int w, int h, int dX, int dY){super(unitName, "./z_hydralisk.gif", x, y, w, h, dX, dY);}
   @Override
   public void tick(int maxw, int maxh)
   {
     m_x = m_x + m_dX;
     m_y = m_y + m_dY;
+
+    if(m_tick % 300 == 0)
+    {
+      m_dX = random.nextInt(10) + 5;
+      m_dY = random.nextInt(30) + 1;
+    }
 
     if (m_x > maxw)
       m_x = 0;

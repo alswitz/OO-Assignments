@@ -1,7 +1,8 @@
 import java.awt.image.BufferedImage;
 import javax.imageio.*;
 import java.io.*;
-import java.awt.Rectangle;
+import java.awt.event.*;
+import java.awt.*;
 
 
 public abstract class GameObject implements IGameObject
@@ -13,9 +14,11 @@ public abstract class GameObject implements IGameObject
   protected int m_h;
   protected int m_dX; // x velocity in pixels per interval
   protected int m_dY; // y velocity in pixels per intercal
+  protected String unitName;
 
-  public GameObject(String image, int x, int y, int w, int h, int dX, int dY)
+  public GameObject(String name, String image, int x, int y, int w, int h, int dX, int dY)
   {
+    unitName = name;
     m_x = x;
     m_y = y;
     m_w = w;
@@ -31,6 +34,8 @@ public abstract class GameObject implements IGameObject
       throw new Error(ex);
     }
   }
+
+  public void mousePressed(MouseEvent e) {}
 
   public abstract void tick(int maxw, int maxh);
 
@@ -67,6 +72,13 @@ public abstract class GameObject implements IGameObject
   { return m_dY; }
 
   @Override
+  public String getUnitName()
+  { return unitName; }
+
+  @Override
   public void keyPressed(char c) {}
+
+  @Override
+  public void specialMove(){}
 
 }

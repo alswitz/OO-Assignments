@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 import java.util.List;
 import java.util.Random;
 import java.util.ArrayList;
+import java.applet.*;
 
 public class MainFrame extends JFrame
 {
@@ -11,6 +12,7 @@ public class MainFrame extends JFrame
   {
     JFrame frame = new MainFrame();
     frame.setVisible(true);
+    frame.setResizable(false);
   }
 
   public MainFrame()
@@ -23,8 +25,10 @@ public class MainFrame extends JFrame
 
     // model
     List<IGameObject> objects = new ArrayList<IGameObject>();
-    objects.add(Factory.getInstance().createEnemy(10, 10, 30, 30, 5, 5));
-    objects.add(Factory.getInstance().createHero(10, 100, 40, 40, 5, 5));
+    objects.add(Factory.getInstance().createEnemy(10, 10, 25, 25, 10, 2, "Enemy"));
+    objects.add(Factory.getInstance().createEnemy(10, 60, 25, 25, 10, 2, "Enemy"));
+    objects.add(Factory.getInstance().createEnemy(10, 110, 25, 25, 10, 2, "Enemy"));
+    objects.add(Factory.getInstance().createHero(600, 300, 40, 40, 5, 5, "Hero"));
 
     // view
     IGameView view = Factory.getInstance().createMainView(objects);
